@@ -1,0 +1,29 @@
+﻿@page "/"
+@namespace WebArticles.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebArticles</title>
+    <base href="~/" />
+    <link rel="stylesheet" href="~/css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/bulma/bulma-rtl.min.css">
+    <link href="css/site.css" rel="stylesheet" />
+    <link href="_content/Blazored.Modal/blazored-modal.css" rel="stylesheet" />
+    <link rel="stylesheet" href="_content/Radzen.Blazor/css/default-base.css">
+</head>
+<body>
+
+    <app>
+        @(await Html.RenderComponentAsync<App>(RenderMode.Server))
+    </app>
+
+    <script src="_content/Blazored.Modal/blazored.modal.js"></script>
+    <script src="_content/Radzen.Blazor/Radzen.Blazor.js"></script>
+    <script src="~/js/jquery.min.js"></script>
+    <script src="_framework/blazor.server.js"></script>
+</body>
+</html>

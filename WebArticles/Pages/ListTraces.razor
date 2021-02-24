@@ -1,0 +1,25 @@
+﻿@page "/traces"
+@using WebArticles.Data;
+@inherits ListTracesBase
+
+<h3>Historial</h3>
+
+
+@if (Traces == null)
+{
+    <progress class="progress is-large is-info" max="100">60%</progress>
+}
+else
+{
+    <RadzenGrid AllowFiltering="true" FilterCaseSensitivity="FilterCaseSensitivity.CaseInsensitive" FilterMode="FilterMode.Advanced"
+                AllowPaging="true" PageSize="10" AllowSorting="true" Data="@Traces" TItem="Trace">
+        <Columns>
+            <RadzenGridColumn TItem="Trace" Property="Url" Title="Url" />
+
+            <RadzenGridColumn TItem="Trace" Property="DateOfAccess" Title="Date of access" />
+        </Columns>
+    </RadzenGrid>
+
+    
+}
+
